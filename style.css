@@ -1,12 +1,22 @@
 body {
-    background-color: #1a1a1a; /* Dark cinema background */
-    color: #ffffff;            /* White text for contrast */
+    background-color: #1a1a1a;
+    color: #ffffff;
     font-family: sans-serif;
     margin: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Stacks header on top of the pages */
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+}
+
+/* New styling to create the top menu bar line */
+.main-header {
+    width: 100%;
+    background-color: #000000; /* Pitch black line like the screenshot */
+    display: flex;
+    justify-content: center;   /* Centers your menu buttons */
+    padding: 15px 0;
+    box-sizing: border-box;
 }
 
 .page {
@@ -14,43 +24,45 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 60px; /* Gives space below the fixed top menu bar */
 }
 
 #home {
     display: flex;
 }
 
-#movies:target, #tickets:target {
-    display: flex;
+/* Updated logic so #home hides whenever any other target page is active */
+body:has(#movies:target) #home,
+body:has(#tickets:target) #home {
+    display: none;
 }
 
-#movies:target ~ #home, #tickets:target ~ #home {
-    display: none;
+#movies:target, #tickets:target {
+    display: flex;
 }
 
 .nav-buttons {
     display: flex;
     gap: 20px;
-    margin-top: 20px;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 16px;
-    color: #ffffff;            /* White button text */
+    font-size: 14px;
+    text-transform: uppercase; /* Makes buttons block capitals like the site */
+    color: #ffffff;
     text-decoration: none;
-    background-color: #333333; /* Dark grey buttons */
-    border: 1px solid #555555; /* Subtle border */
-    border-radius: 4px;        /* Slightly rounded corners */
+    background-color: transparent; /* Seamless clean look */
+    font-weight: bold;
     cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #444444; /* Lights up slightly on hover */
+    color: #0056b3; /* Changes color slightly when you point at it */
 }
 
 .back-link {
     margin-top: 30px;
-    color: #cccccc;            /* Muted grey for the back link */
+    color: #cccccc;
 }
