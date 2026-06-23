@@ -4,19 +4,19 @@ body {
     font-family: sans-serif;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Stacks header on top of the pages */
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
 }
 
-/* New styling to create the top menu bar line */
 .main-header {
     width: 100%;
-    background-color: #000000; /* Pitch black line like the screenshot */
+    background-color: #000000;
     display: flex;
-    justify-content: center;   /* Centers your menu buttons */
+    justify-content: center;
     padding: 15px 0;
     box-sizing: border-box;
+    border-bottom: 1px solid #222222;
 }
 
 .page {
@@ -24,14 +24,13 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 60px; /* Gives space below the fixed top menu bar */
+    margin-top: 60px;
 }
 
 #home {
     display: flex;
 }
 
-/* Updated logic so #home hides whenever any other target page is active */
 body:has(#movies:target) #home,
 body:has(#tickets:target) #home {
     display: none;
@@ -43,23 +42,33 @@ body:has(#tickets:target) #home {
 
 .nav-buttons {
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 0;
     font-size: 14px;
-    text-transform: uppercase; /* Makes buttons block capitals like the site */
-    color: #ffffff;
+    text-transform: uppercase;
+    color: #999999;
     text-decoration: none;
-    background-color: transparent; /* Seamless clean look */
-    font-weight: bold;
+    font-weight: normal;
     cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
 }
 
 .btn:hover {
-    color: #0056b3; /* Changes color slightly when you point at it */
+    color: #ffffff;
+    border-bottom: 3px solid #ffffff; 
+}
+
+body:not(:has(:target)) #nav-home,                  
+body:has(#movies:target) #nav-movies,               
+body:has(#tickets:target) #nav-tickets {             
+    color: #ffffff;
+    font-weight: bold;
+    border-bottom: 3px solid #ffffff;
 }
 
 .back-link {
