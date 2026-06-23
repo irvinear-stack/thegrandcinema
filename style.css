@@ -60,4 +60,69 @@ body {
 }
 
 .login-link {
-    color: #ffffff
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #999999;
+    text-decoration: none;
+    font-weight: normal;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.btn:hover {
+    color: #ffffff;
+    border-bottom: 3px solid #ffffff; 
+}
+
+body:has(#movies:target) #nav-movies,               
+body:has(#rewards:target) #nav-rewards,               
+body:has(#giftshop:target) #nav-giftshop,
+body:has(#coming-soon:target) #nav-movies,
+body:has(#food-beverage:target) #nav-movies,
+body:not(:has(:target)) #nav-movies {             
+    color: #ffffff;
+    font-weight: bold;
+    border-bottom: 3px solid #ffffff;
+}
+
+.poster-gap-placeholder {
+    width: 100%;
+    height: 350px;
+    background-color: #111111;
+}
+
+.sub-nav-bar {
+    width: 100%;
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.sub-nav-buttons {
+    display: flex;
+    gap: 40px;
+}
+
+.sub-btn {
+    display: inline-block;
+    padding: 8px 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #999999;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-
